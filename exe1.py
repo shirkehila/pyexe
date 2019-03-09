@@ -8,7 +8,7 @@ def load_codes():
     with open("nums_codes.txt") as nc:
         for record in nc:
             (num, code, balance) = record.split()
-            nums_codes[num] = (code, balance)
+            nums_codes[num] = (code, int(balance))
 
 
 def check_num_code(num, code):
