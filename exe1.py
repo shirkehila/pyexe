@@ -18,7 +18,7 @@ def check_num_code(num, code):
     :param code: card code
     :return: True if the code is correct, False otherwise
     """
-    if nums_codes[num] == code:
+    if nums_codes[num][0] == code:
         return True
     return False
 
