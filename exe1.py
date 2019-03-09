@@ -22,7 +22,8 @@ def check_num_code():
     """
     num = input("Enter card number:")  # card number
     code = input("Enter code:")  # card code
-
+    global cur_num
+    global nums_codes
     while nums_codes[num][0] != code:
         print("Wrong number, please try again:")
         num = input("Enter card number: (press q to quit)")
@@ -46,7 +47,7 @@ if __name__ == '__main__':
                 print("Wrong operation, try again:")
                 op = input("a - print balance\nb - withdrawal\nc - change code\nd - quit")
             if op == 'a':
-                print("Your balance is")
+                print("Your balance is {} dollars".format(nums_codes[cur_num][1]))
 
 
 
