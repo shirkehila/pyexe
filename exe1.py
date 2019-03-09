@@ -63,7 +63,7 @@ def change_code():
     :return:
     """
     global cur_num
-    new_code = input("Enter new code")
+    new_code = input("Enter new code:")
     nums_codes[cur_num][0] = new_code
 
 
