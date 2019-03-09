@@ -11,6 +11,18 @@ def load_codes():
             nums_codes[key] = val
 
 
+def check_num_code(num, code):
+    """Check if the code matches the card number
+
+    :param num: card number
+    :param code: card code
+    :return: True if the code is correct, False otherwise
+    """
+    if nums_codes[num] == code:
+        return True
+    return False
+
+
 if __name__ == '__main__':
     load_codes()
     pp(nums_codes)
