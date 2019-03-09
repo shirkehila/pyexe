@@ -36,6 +36,25 @@ def check_num_code():
     return True
 
 
+def withdrawal():
+    """Asks user how much money to withdrawal and withdrawals it
+
+    :return:
+    """
+    global cur_num
+    choice = input("How much money to withdrawal?\na - 20\nb - 50\nc - another")
+    if choice == 'a':
+        money = 20
+    elif choice == 'b':
+        money = 50
+    else:
+        money = int(input("Enter amount of money"))
+    if money > nums_codes[cur_num][1]:
+        print("Not enough money!")
+    else:
+        nums_codes[cur_num][1] -= money
+
+
 if __name__ == '__main__':
     load_codes()
     exit_bank = 0  # 0 until the user wants to exit
@@ -48,6 +67,10 @@ if __name__ == '__main__':
                 op = input("a - print balance\nb - withdrawal\nc - change code\nd - quit")
             if op == 'a':
                 print("Your balance is {} dollars".format(nums_codes[cur_num][1]))
+            elif op == 'b':
+                withdrawal()
+            else:
+                break  # chose d
 
 
 
