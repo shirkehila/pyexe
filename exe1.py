@@ -42,6 +42,7 @@ def withdrawal():
     :return:
     """
     global cur_num
+    global nums_codes
     choice = input("How much money to withdrawal?\na - 20\nb - 50\nc - another")
     if choice == 'a':
         money = 20
@@ -53,6 +54,17 @@ def withdrawal():
         print("Not enough money!")
     else:
         nums_codes[cur_num][1] -= money
+        print("Success")
+
+
+def change_code():
+    """Changes client code
+
+    :return:
+    """
+    global cur_num
+    new_code = input("Enter new code")
+    nums_codes[cur_num][0] = new_code
 
 
 if __name__ == '__main__':
@@ -69,8 +81,11 @@ if __name__ == '__main__':
                 print("Your balance is {} dollars".format(nums_codes[cur_num][1]))
             elif op == 'b':
                 withdrawal()
+            elif op == 'c':
+                change_code()
             else:
                 break  # chose d
+            check_num_code()
 
 
 
