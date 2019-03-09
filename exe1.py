@@ -11,18 +11,29 @@ def load_codes():
             nums_codes[num] = (code, int(balance))
 
 
-def check_num_code(num, code):
-    """Check if the code matches the card number
+def check_num_code():
+    """Ask user for card number and code until he enters a correct pair or quits
 
-    :param num: card number
-    :param code: card code
-    :return: True if the code is correct, False otherwise
+    :param
+    :param
+    :return: True if the code is correct, False if quited
     """
-    if nums_codes[num][0] == code:
-        return True
-    return False
+    num = input("Enter card number:")  # card number
+    code = input("Enter code:")  # card code
+
+    while nums_codes[num][0] != code:
+        num = input("Enter card number: (press q to quit)")
+        if num == "q":
+            return False
+        code = input("Enter code: (press q to quit)")
+        if code == "q":
+            return False
+    return True
 
 
 if __name__ == '__main__':
     load_codes()
-    pp(nums_codes)
+    exit_bank = 0  # 0 until the user wants to exit
+    print(check_num_code())
+
+
