@@ -1,6 +1,7 @@
 from pprint import pprint as pp
 nums_codes = {}  # a dictionary to hold card nums and codes
 ops = ['a', 'b', 'c', 'd']
+cur_num = ''
 
 
 def load_codes():
@@ -30,6 +31,7 @@ def check_num_code():
         code = input("Enter code: (press q to quit)")
         if code == "q":
             return False
+    cur_num = num
     return True
 
 
@@ -43,6 +45,8 @@ if __name__ == '__main__':
             while op not in ops:
                 print("Wrong operation, try again:")
                 op = input("a - print balance\nb - withdrawal\nc - change code\nd - quit")
+            if op == 'a':
+                print("Your balance is")
 
 
 
