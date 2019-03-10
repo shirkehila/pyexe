@@ -144,3 +144,11 @@ def print_result(result):
             3:'it\'s a draw'}
 
     print(msgs[result])
+
+
+if __name__ == '__main__':
+    board = [[1, 2, 0],
+             [2, 1, 0],
+             [2, 1, 1]]
+    result = check_board(board)
+    print_result(result)
