@@ -73,13 +73,12 @@ def update_file():
     :return:
     """
     global cur_num
-    with open('nums_codes.txt','w+t') as nc:
-        line = nc.readline()
-        details = line.split()
-        while details[0] != cur_num:
-            next = nc.readline()
-            line = next
-        print(line)
+    global nums_codes
+    new_records = []
+    for num in nums_codes:
+        new_records.append(" ".join([num, nums_codes[num][0],str(nums_codes[num][1])]))
+    with open('nums_codes.txt','wt') as nc:
+        nc.write("\n".join(new_records))
 
 
 if __name__ == '__main__':
