@@ -1,14 +1,15 @@
 import time
-lookup = {}
 
 
 def cache_decorator(function):
+    lookup = {}
+
     def wrapper(*args):
-        if (function.__name__, args) in lookup:
-            return lookup[(function.__name__, args)]
+        if args in lookup:
+            return lookup[args]
         else:
             result = function(*args)
-            lookup[(function.__name__, args)] = result
+            lookup[args] = result
             return result
     return wrapper
 
@@ -19,7 +20,7 @@ def catalan(n):
     Catalan number are used in many combinatorial problems
 
     :param n:
-    :return:
+    :return: nth catalan number
     """
     if n == 0:
         return 1
@@ -35,6 +36,6 @@ def fib(n):
 
 if __name__ == '__main__':
     start_time = time.time()
-    print(catalan(4))
-    print(fib(100))
+    print(catalan(100))
+    print(catalan(100))
     print("{} seconds".format(time.time()-start_time))
