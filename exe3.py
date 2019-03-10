@@ -56,3 +56,23 @@ def check_main_diagonal(board):
     if board[0][0] == board[1][1] == board[2][2]:
         return board[0][0]
     return 0
+
+
+def check_minor_diagonal(board):
+    """Checks the minor diagonal for winner
+
+    Args:
+        board: A 3*3 matrix with cells:
+            0 - empty
+            1 - player 1
+            2 - player 2
+
+    Returns:
+        0 - no winner
+        1 - player 1 won
+        2 - player 2 won
+    """
+
+    if board[0][2] == board[1][1] == board[2][0]:
+        return board[0][2]
+    return 0
