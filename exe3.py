@@ -76,3 +76,49 @@ def check_minor_diagonal(board):
     if board[0][2] == board[1][1] == board[2][0]:
         return board[0][2]
     return 0
+
+
+def check_board(board):
+    """Checks if player 1 won, player 2 won or there is a draw
+
+    Args:
+        board: A 3*3 matrix with cells:
+            0 - empty
+            1 - player 1
+            2 - player 2
+
+    Returns:
+        0 - no resolution
+        1 - player 1 won
+        2 - player 2 won
+        3 - it's a draw
+    """
+    # check all rows for winner
+    for i in range(3):
+        res = check_row(board,i)
+        if res != 0:
+            return res
+
+    # check all cols for winner
+    for i in range(3):
+        res = check_col(board,i)
+        if res != 0:
+            return res
+
+    # check diagonals for winner
+    res = check_main_diagonal(board)
+    if res != 0:
+        return res
+
+    res = check_minor_diagonal(board)
+    if res != 0:
+        return res
+
+    # check if there are empty cells and thus no resolution yet
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] == 0:
+                return 0
+
+    # conclude that it's a draw
+    return 3
