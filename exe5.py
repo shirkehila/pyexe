@@ -19,3 +19,11 @@ def check_id(id):
         _sum += next
     sum_round_10 = pow(int(log10(_sum))+1, 10)
     return sum_round_10 == check
+
+
+if __name__ == "__main__":
+    id = input("Enter id to check")
+    if check_id(int(id)):
+        print("Valid")
+    else:
+        print("Invalid")
