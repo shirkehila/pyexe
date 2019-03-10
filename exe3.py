@@ -122,3 +122,25 @@ def check_board(board):
 
     # conclude that it's a draw
     return 3
+
+
+def print_result(result):
+    """Gets a numerical result and prints an appropriate message
+
+    Args:
+        result: numerical result
+
+    Returns:
+        string message of the result:
+            0 - no resolution
+            1 - player 1 won
+            2 - player 2 won
+            3 - it's a draw
+    """
+
+    msgs = {0:'no resolution',
+            1:'player 1 won',
+            2:'player 2 won',
+            3:'it\'s a draw'}
+
+    print(msgs[result])
