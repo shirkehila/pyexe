@@ -3,7 +3,12 @@ def sum1():
 
     :return:
     """
-    pass
+    _sum = 0
+    num = input("Enter next number, to finish enter 'stop'")
+    while num != "stop":
+        _sum += int(num)
+        num = input("Enter next number, to finish enter 'stop'")
+    return _sum
 
 
 def sum2():
