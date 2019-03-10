@@ -27,7 +27,7 @@ def sum2():
         nums = [int(num) for num in nums]
         return sum(nums)
     print("You entered something different than a number or wrong separator")
-    return None
+    return 0
 
 
 if __name__ == "__main__":
