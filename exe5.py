@@ -12,17 +12,17 @@ def check_id(id):
     id = int(id / 10)  # 54370042
     _sum = 0
     for i in range(8):
-        next = (id%10) * (2 - i % 2)
-        id=int(id/10)
+        next = (id % 10) * (2 - i % 2)
+        id = int(id / 10)
         if next > 9:
             next = int(next / 10) + next % 10
         _sum += next
-    sum_round_10 = ceil(_sum/10)*10
+    sum_round_10 = ceil(_sum / 10) * 10
     return sum_round_10 - _sum == check
 
 
 if __name__ == "__main__":
-    id = input("Enter id to check")
+    id = input("Enter id to check:\n")
     if check_id(int(id)):
         print("Valid")
     else:
