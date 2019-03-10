@@ -95,13 +95,13 @@ def check_board(board):
     """
     # check all rows for winner
     for i in range(3):
-        res = check_row(board,i)
+        res = check_row(board, i)
         if res != 0:
             return res
 
     # check all cols for winner
     for i in range(3):
-        res = check_col(board,i)
+        res = check_col(board, i)
         if res != 0:
             return res
 
@@ -138,10 +138,10 @@ def print_result(result):
             3 - it's a draw
     """
 
-    msgs = {0:'no resolution',
-            1:'player 1 won',
-            2:'player 2 won',
-            3:'it\'s a draw'}
+    msgs = {0: 'no resolution',
+            1: 'player 1 won',
+            2: 'player 2 won',
+            3: 'it\'s a draw'}
 
     print(msgs[result])
 
