@@ -9,7 +9,7 @@ def check_id(id):
     """
     # example 54370042-1
     check = id % 10  # 1
-    id = id / 10  # 54370042
+    id = int(id / 10)  # 54370042
     _sum = 0
     for i in range(8):
         next = (id%10) * (2 - i % 2)
