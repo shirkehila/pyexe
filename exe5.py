@@ -1,4 +1,4 @@
-from math import log10, pow
+from math import ceil
 
 
 def check_id(id):
@@ -17,8 +17,8 @@ def check_id(id):
         if next > 9:
             next = int(next / 10) + next % 10
         _sum += next
-    sum_round_10 = pow(int(log10(_sum))+1, 10)
-    return sum_round_10 == check
+    sum_round_10 = ceil(_sum/10)*10
+    return sum_round_10 - _sum == check
 
 
 if __name__ == "__main__":
