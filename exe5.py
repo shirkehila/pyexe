@@ -13,7 +13,7 @@ def check_id(id):
     _sum = 0
     for i in range(8):
         next = (id%10) * (2 - i % 2)
-        id/=10
+        id=int(id/10)
         if next > 9:
             next = int(next / 10) + next % 10
         _sum += next
