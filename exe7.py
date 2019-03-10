@@ -29,6 +29,11 @@ def catalan(n):
 
 @cache_decorator
 def fib(n):
+    """A function to calculate fibonacci number recursively
+
+    :param n:
+    :return: nth fibonacci number
+    """
     if n == 0 or n == 1:
         return 1
     return fib(n-1)+fib(n-2)
@@ -36,6 +41,5 @@ def fib(n):
 
 if __name__ == '__main__':
     start_time = time.time()
-    print(catalan(100))
     print(catalan(100))
     print("{} seconds".format(time.time()-start_time))
