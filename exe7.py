@@ -1,3 +1,4 @@
+import time
 lookup = {}
 
 
@@ -24,4 +25,6 @@ def catalan(n):
 
 
 if __name__ == '__main__':
-    print(catalan(100))
+    start_time = time.time()
+    print(catalan(15))
+    print("{} seconds".format(time.time()-start_time))
