@@ -1,3 +1,6 @@
+import time
+
+
 def catalan(n):
     """A function to calculate catalan number recursively
     Catalan number are used in many combinatorial problems
@@ -11,4 +14,6 @@ def catalan(n):
 
 
 if __name__ == '__main__':
-    print(catalan(3))
+    start_time = time.time()
+    print(catalan(15))
+    print("{} seconds".format(time.time()-start_time))
