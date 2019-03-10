@@ -16,7 +16,12 @@ def sum2():
 
     :return:
     """
-    pass
+    nums = input("Enter a sequence of numbers separated by commas:")
+    # remove whitespaces
+    nums = "".join(nums.split(" "))
+    nums = nums.split(",")
+    nums = [int(num) for num in nums]
+    return sum(nums)
 
 
 if __name__ == "__main__":
