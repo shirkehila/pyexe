@@ -7,7 +7,7 @@ cur_num = ''
 def load_codes():
     """Load number vs code dictionary from codes file
     """
-    with open("nums_codes.txt") as nc:
+    with open("nums_codes.txt",'rt') as nc:
         for record in nc:
             (num, code, balance) = record.split()
             nums_codes[num] = [code, int(balance)]
@@ -67,6 +67,21 @@ def change_code():
     nums_codes[cur_num][0] = new_code
 
 
+def update_file():
+    """Update nums_code.txt if a change was made in balance or code
+
+    :return:
+    """
+    global cur_num
+    with open('nums_codes.txt','w+t') as nc:
+        line = nc.readline()
+        details = line.split()
+        while details[0] != cur_num:
+            next = nc.readline()
+            line = next
+        print(line)
+
+
 if __name__ == '__main__':
     load_codes()
     exit_bank = 0  # 0 until the user wants to exit
@@ -81,8 +96,10 @@ if __name__ == '__main__':
                 print("Your balance is {} dollars".format(nums_codes[cur_num][1]))
             elif op == 'b':
                 withdrawal()
+                update_file()
             elif op == 'c':
                 change_code()
+                update_file()
             else:
                 break  # chose d
             check_num_code()
