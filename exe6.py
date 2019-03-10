@@ -1,12 +1,18 @@
-def minmax(test, *args):
-    res = args[0]
-    for arg in args[1:]:
-        if test(arg, res):
-            res = arg
-    return res
+from pprint import pprint as pp
 
-def lessthan(x, y): return x < y
-def grtrthan(x, y): return x > y
 
-print(minmax(lessthan, 4, 2, 1, 5, 6, 3))
-print(minmax(grtrthan, 4, 2, 1, 5, 6, 3))
+def times2(x): return x * 2
+
+
+def mod2(x): return x % 2
+
+
+def map_func(mapping, *args):
+    l = args[0]
+    mapped = [mapping(x) for x in l]
+    return mapped
+
+
+if __name__ == '__main__':
+    pp(map_func(times2, [4, 7, 2, 9, 4]))
+    pp(map_func(mod2, [4, 7, 2, 9, 4]))
