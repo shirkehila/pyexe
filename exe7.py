@@ -39,7 +39,20 @@ def fib(n):
     return fib(n-1)+fib(n-2)
 
 
+@cache_decorator
+def padovan(n):
+    """A function to calculate padovan numbers
+    as n grown padovan(n)/padovan(n-1) approaches the plastic number
+
+    :param n:
+    :return: nth padovan number
+    """
+    if n == 0 or n == 1 or n == 2:
+        return 1
+    return padovan(n-2)+padovan(n-3)
+
+
 if __name__ == '__main__':
     start_time = time.time()
-    print(catalan(100))
+    print(padovan(100))
     print("{} seconds".format(time.time()-start_time))
